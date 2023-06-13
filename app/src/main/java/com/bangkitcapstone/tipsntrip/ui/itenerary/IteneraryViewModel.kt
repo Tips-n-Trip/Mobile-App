@@ -25,6 +25,8 @@ class IteneraryViewModel: ViewModel() {
     val listItenerary: LiveData<IteneraryListResponse> = _listItenerary
     private var _saveItenerary = MutableLiveData<SaveIteneraryResponse>()
     val saveItenerary: LiveData<SaveIteneraryResponse> = _saveItenerary
+    private var _unsaveItenerary = MutableLiveData<DeleteIteneraryResponse>()
+    val unsaveItenerary: LiveData<DeleteIteneraryResponse> = _unsaveItenerary
     private var _deleteItenerary = MutableLiveData<DeleteIteneraryResponse>()
     val deleteItenerary: LiveData<DeleteIteneraryResponse> = _deleteItenerary
     private var _isLoading = MutableLiveData<Boolean>()
@@ -111,6 +113,27 @@ class IteneraryViewModel: ViewModel() {
             }
 
             override fun onFailure(call: Call<SaveIteneraryResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e("Failed to Fetch Data", "onFailure Call: ${t.message}")
+                _error.postValue("${context.getString(R.string.itenenary_save_error)} : ${t.message}")
+            }
+
+        })
+    }
+    fun unsaveItenerarybyId(context:Context, id: String){
+        _isLoading.value = true
+        val client = ApiConfig.getApiService(context).unsaveItenerary(id)
+        client.enqueue(object : Callback<DeleteIteneraryResponse>{
+            override fun onResponse(call: Call<DeleteIteneraryResponse>, response: Response<DeleteIteneraryResponse>) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _unsaveItenerary.postValue(response.body())
+                } else {
+                    _error.postValue("ERROR ${response.code()} : ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<DeleteIteneraryResponse>, t: Throwable) {
                 _isLoading.value = false
                 Log.e("Failed to Fetch Data", "onFailure Call: ${t.message}")
                 _error.postValue("${context.getString(R.string.itenenary_save_error)} : ${t.message}")

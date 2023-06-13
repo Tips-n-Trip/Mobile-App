@@ -6,19 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkitcapstone.tipsntrip.adapter.explore.FragmentCityAdapter
-import com.bangkitcapstone.tipsntrip.adapter.loading.LoadingStateAdapter
-import com.bangkitcapstone.tipsntrip.data.remote.api.ApiConfig
-import com.bangkitcapstone.tipsntrip.data.remote.repository.ExplorePagingRepository
+import com.bangkitcapstone.tipsntrip.data.lib.city.Destination
 import com.bangkitcapstone.tipsntrip.databinding.FragmentCityBinding
-import com.bangkitcapstone.tipsntrip.ui.viewmodelfactory.PagingSourceFactory
 
 
 class CityFragment : Fragment() {
     private lateinit var binding: FragmentCityBinding
-    private lateinit var cityFragmentViewModel: CityDestinationViewModel
+    private val cityFragmentViewModel by viewModels<CityDestinationViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -31,7 +28,7 @@ class CityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.hide()
         recyclerView()
-        setupData()
+        setupAction()
     }
 
     private fun recyclerView() {
@@ -39,22 +36,22 @@ class CityFragment : Fragment() {
         binding.rvCity.layoutManager = layoutManager
     }
 
-    private fun setupData() {
-        val adapter = FragmentCityAdapter()
-        binding.rvCity.adapter = adapter.withLoadStateFooter(
-            footer = LoadingStateAdapter {
-                adapter.retry()
+    private fun setupData(input: ArrayList<Destination>) {
+        val data = ArrayList<Destination>()
+        for (i in input) {
+            data.add(i)
+        }
+        val adapter = FragmentCityAdapter(data)
+        binding.rvCity.adapter = adapter
+    }
+
+    private fun setupAction() {
+        cityFragmentViewModel.apply {
+            getAllDataDestination(requireActivity())
+
+            destination.observe(viewLifecycleOwner) {
+                setupData(it.destinations)
             }
-        )
-
-        val repository = ExplorePagingRepository(ApiConfig.getApiService(requireContext()))
-        cityFragmentViewModel = ViewModelProvider(
-            this@CityFragment,
-            PagingSourceFactory(repository)
-        )[CityDestinationViewModel::class.java]
-
-        cityFragmentViewModel.cityDestination.observe(viewLifecycleOwner) {
-            adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
     }
 

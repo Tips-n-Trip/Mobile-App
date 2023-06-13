@@ -128,6 +128,6 @@
     <string name="itenenary_notSaved">Rute tidak tersimpan</string>
     <string name="detail_click_instruction">Klik kartu untuk melihat detail informasi wisata</string>
     <string name="day_time">Pagi - Sore</string>
-    <string name="night_time">Malam</string>
+    <string name="night_time">Sore - Malam</string>
     <string name="required_budget">Total estimasi budget yang dikeluarkan Rp%d</string>
 </resources>

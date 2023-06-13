@@ -81,6 +81,11 @@ interface ApiService {
         @Path("id") id: String
     ) : Call<SaveIteneraryResponse>
 
+    @GET("itenerary/unsave/{id}")
+    fun unsaveItenerary(
+        @Path("id") id: String
+    ) : Call<DeleteIteneraryResponse>
+
     @GET("itenerary/delete/{id}")
     fun deleteItenerary(
         @Path("id") id: String

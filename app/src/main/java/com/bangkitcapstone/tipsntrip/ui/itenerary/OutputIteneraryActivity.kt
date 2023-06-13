@@ -1,6 +1,7 @@
 package com.bangkitcapstone.tipsntrip.ui.itenerary
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
@@ -105,12 +106,15 @@ class OutputIteneraryActivity : AppCompatActivity() {
         builder.setMessage(resources.getString(R.string.delete_itenenary_message, name))
         builder.setPositiveButton(resources.getString(R.string.next)) { _, _ ->
             iteneraryViewModel.apply {
-                deleteItenerarybyId(this@OutputIteneraryActivity, id)
-                deleteItenerary.observe(this@OutputIteneraryActivity, {
+                isLoading.observe(this@OutputIteneraryActivity, {
+                    showLoading(it)
+                })
+                unsaveItenerarybyId(this@OutputIteneraryActivity, id)
+                unsaveItenerary.observe(this@OutputIteneraryActivity, {
                     if (it.success == true) {
-                        Toast.makeText(this@OutputIteneraryActivity,
-                            resources.getString(R.string.itenenary_deleted),
-                            Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@OutputIteneraryActivity,
+//                            resources.getString(R.string.itenenary_deleted),
+//                            Toast.LENGTH_SHORT).show()
                         binding.ivBookmark.setImageDrawable(resources.getDrawable(R.drawable.ic_bookmark_white))
                         isBookmarked = !isBookmarked
                     } else {
@@ -131,6 +135,10 @@ class OutputIteneraryActivity : AppCompatActivity() {
         dialog.getButton(AlertDialog.BUTTON_POSITIVE)
             .setTextColor(resources.getColor(R.color.blue_app))
         dialog.window?.setBackgroundDrawableResource(R.drawable.rounded_dialog)
+    }
+
+    private fun showLoading(state: Boolean) {
+        binding.progressBar.visibility = if (state) View.VISIBLE else View.GONE
     }
 
     companion object {
