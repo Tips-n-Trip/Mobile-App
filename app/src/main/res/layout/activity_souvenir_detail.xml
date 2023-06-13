@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".ui.detail.souvenir.SouvenirDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_banner_detail_souvenir"
+            android:layout_width="match_parent"
+            android:layout_height="295dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/banner_detail_souvenir"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/btn_back_detail_souvenir"
+            style="@style/FloatingButtonStyle"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_back_button"
+            android:backgroundTint="@color/blue_app_darker1"
+            android:contentDescription="@string/button_back"
+            android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_souvenir_name"
+            style="@style/TextSpec.Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/title_souvenir"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/iv_banner_detail_souvenir" />
+
+        <TextView
+            android:id="@+id/tv_souvenir_address"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="351dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="15dp"
+            android:text="@string/detail_souvenir_location"
+            app:drawableStartCompat="@drawable/ic_point_maps"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalRight"
+            app:layout_constraintStart_toStartOf="@+id/tv_souvenir_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_souvenir_name" />
+
+        <Button
+            android:id="@+id/btn_detail_souvenir_getMaps"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/getMaps"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_text"
+            app:layout_constraintStart_toStartOf="@+id/tv_souvenir_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_souvenir_address" />
+
+        <TextView
+            android:id="@+id/detail_souvenir_time_open"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="15dp"
+            android:gravity="center"
+            android:text="@string/open_at"
+            app:drawableStartCompat="@drawable/ic_baseline_access_time_24"
+            app:layout_constraintStart_toStartOf="@+id/tv_souvenir_address"
+            app:layout_constraintTop_toBottomOf="@+id/btn_detail_souvenir_getMaps" />
+
+        <TextView
+            android:id="@+id/tv_open_hour_value"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/time_recommendation_value"
+            app:layout_constraintBottom_toBottomOf="@+id/detail_souvenir_time_open"
+            app:layout_constraintStart_toEndOf="@+id/detail_souvenir_time_open"
+            app:layout_constraintTop_toTopOf="@+id/detail_souvenir_time_open" />
+
+        <TextView
+            android:id="@+id/title_detail_souvenir_description"
+            style="@style/TextSpec.Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/label_about_souvenir_description"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@id/detail_souvenir_time_open" />
+
+        <TextView
+            android:id="@+id/tv_souvenir_description"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="351dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/detail_souvenir_description"
+            app:layout_constraintStart_toStartOf="@+id/title_detail_souvenir_description"
+            app:layout_constraintTop_toBottomOf="@+id/title_detail_souvenir_description" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

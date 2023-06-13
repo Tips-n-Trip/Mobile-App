@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/banner_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/include">
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    style="@style/TextSpec.Field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/city_title"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:maxHeight="140dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_city"
+                    tools:listitem="@layout/cardview_city_small" />
+
+                <Button
+                    android:id="@+id/btn_more_city"
+                    style="@style/TextSpec.TextDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-16dp"
+                    android:background="?android:selectableItemBackground"
+                    android:text="@string/btn_more"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_city" />
+
+                <TextView
+                    android:id="@+id/tv_attraction"
+                    style="@style/TextSpec.Field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attraction_title"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_more_city" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_attraction"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:maxHeight="140dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_attraction"
+                    tools:listitem="@layout/cardview_attraction_small" />
+
+                <Button
+                    android:id="@+id/btn_more_attraction"
+                    style="@style/TextSpec.TextDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-16dp"
+                    android:background="?android:selectableItemBackground"
+                    android:text="@string/btn_more"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_attraction" />
+
+                <TextView
+                    android:id="@+id/tv_souvenir"
+                    style="@style/TextSpec.Field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/souvenir_title"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_more_attraction" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_souvenir"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_souvenir"
+                    tools:listitem="@layout/cardview_souvenir_small" />
+
+                <Button
+                    android:id="@+id/btn_more_souvenir"
+                    style="@style/TextSpec.TextDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-16dp"
+                    android:background="?android:selectableItemBackground"
+                    android:text="@string/btn_more"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_souvenir" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

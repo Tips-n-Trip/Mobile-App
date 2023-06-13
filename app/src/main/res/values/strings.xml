@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">Tips n Trip</string>
+    <string name="signup">Daftar</string>
+    <string name="signup_en">Sign Up</string>
+    <string name="login_en">Login</string>
+    <string name="login">Masuk</string>
+    <string name="login_google">Masuk dengan Google</string>
+    <string name="signup_google">Daftar dengan Google</string>
+    <string name="message_welcome_page">xxxx</string>
+    <string name="title_welcome_page">xxxx</string>
+    <string name="title_signup_page">Masukkan data diri kamu</string>
+    <string name="signup_success_message">Akun anda berhasil dibuat, silahkan login!</string>
+    <string name="signup_failed_message">Akun anda gagal dibuat, silahkan mengikuti ketentuan!</string>
+    <string name="signup_success_title">Sign up berhasil</string>
+    <string name="signup_failed_title">Sign up gagal</string>
+    <string name="login_failed">Login gagal</string>
+    <string name="login_success">Ayo rencanakan perjalananmu sekarang!</string>
+    <string name="signUp_question">Belum punya akun?</string>
+    <string name="login_question">Sudah punya akun?</string>
+    <string name="email_password_invalid">Email atau password tidak sesuai</string>
+    <string name="column_isEmpty_message">Kolom tidak boleh kosong!</string>
+    <string name="password_minimum">Password minimal 8 karakter</string>
+    <string name="email_invalid">Email tidak valid</string>
+    <string name="name_minimum">Minimum 2 karakter</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Masukkan data diri kamu</string>
+    <string name="title_login_page">Login</string>
+    <string name="name">Nama</string>
+    <string name="copyright">© b a n g k i t</string>
+    <string name="greeting">Halo %1$s</string>
+    <string name="logout">Keluar</string>
+    <string name="logout_message">Yakin ingin keluar dari aplikasi?</string>
+    <string name="description">Deskripsi</string>
+    <string name="setting">Pengaturan</string>
+    <string name="retry">Ulangi</string>
+    <string name="or">atau</string>
+    <string name="error_loading">Gagal memuat data!</string>
+    <string name="explore_city">Jelajahi Kota</string>
+    <string name="destination_error">Tidak bisa mendapatkan data kota pada API!</string>
+    <string name="click_instruction">Tekan untuk detail lainnya!</string>
+    <string name="optional">Opsional</string>
+    <string name="next">lanjut</string>
+    <string name="cancel">batal</string>
+    <string name="address">Alamat</string>
+    <string name="explore">Jelajah</string>
+    <string name="itenenary">Buat Rute</string>
+    <string name="home">Beranda</string>
+    <string name="journey">Perjalananku</string>
+    <string name="profile">Profil</string>
+    <string name="banner_home_desc">Dapatkan informasi destinasi dari rekomendasi rencana perjalanan terlengkap hanya di Tips n Trip</string>
+    <string name="banner_home_title">Mulai petualanganmu bersama Tips n Trip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="souvenir_title">Souvenir</string>
+    <string name="city_title">Destinasi Tujuan</string>
+    <string name="attraction_title">Wisata</string>
+    <!--    ACIL detail city-->
+    <string name="label_city">Destinasi</string>
+    <string name="label_about_city">Tentang %s</string>
+    <string name="detail_city_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.</string>
+
+    <string name="label_destination">Destinasi</string>
+    <string name="label_list_destination">Objek Wisata</string>
+    <string name="label_about_destination">Deskripsi Objek Wisata</string>
+    <string name="detail_destination_location">Jalan Balekambang, Dusun Sumber Jambe, Desa Srigonco, Kecamatan Bantur, Malang, Jawa Timur.</string>
+    <string name="detail_destination_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.</string>
+
+    <string name="label_souvenir">Souvenir</string>
+    <string name="title_souvenir">Toko Sentra</string>
+    <string name="label_about_souvenir_description">Deskripsi Toko</string>
+    <string name="detail_souvenir_location">Jalan Balekambang, Dusun Sumber Jambe, Desa Srigonco, Kecamatan Bantur, Malang, Jawa Timur.</string>
+    <string name="detail_souvenir_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.</string>
+
+    <string name="starting_price">Harga Mulai</string>
+    <string name="price">Rp%d</string>
+    <string name="getMaps">Peta Lokasi</string>
+    <string name="time_recommendation">Rekomendasi Waktu :</string>
+    <string name="open_at">Buka :</string>
+    <string name="time_recommendation_value">Day/Night</string>
+    <string name="button_back">button back</string>
+    <string name="total_tourist_attraction">30</string>
+    <string name="total_souvenir">10</string>
+    <string name="btn_more">Selengkapnya</string>
+    <string name="city_choice_title">Pilih tujuan</string>
+    <string name="day_choice_title">Jumlah hari</string>
+    <string name="budget_choice_title">Budget (Rp)</string>
+    <string name="disclaimer_title">Perhatian!</string>
+    <string name="disclaimer_value">Budget yang dimasukkan minimal per-hari adalah Rp100.000</string>
+    <string-array name="disclaimer_array_value">
+        <item>⦾ Biaya dapat berubah sewaktu-waktu dan hanya mencakup tiket masuk tempat wisata</item>
+        <item>⦾ Budget yang dimasukkan minimal per-hari adalah Rp100.000</item>
+    </string-array>
+    <string name="create_itenenary">Buat Rencana</string>
+    <string name="tv_banner_title">%d hari di %s</string>
+    <string name="day_label">Hari ke-%d</string>
+    <string name="username">Your Name</string>
+    <string name="itineraries">Perjalanan</string>
+    <string name="bookmarked_plan">Daftar perjalanan</string>
+    <string name="point_barrier"> . </string>
+    <string name="total_day">%d hari</string>
+    <string name="email_value">%s@email.com</string>
+    <string name="cooming_soon">Fitur akan segera hadir</string>
+    <string name="day_index">Hari ke</string>
+    <string name="day_one">1</string>
+    <string name="day_two">2</string>
+    <string name="day_three">3</string>
+    <string name="day_four">4</string>
+    <string name="day_five">5</string>
+    <string-array name="day_choices">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string name="login_request_question">Kamu harus masuk terlebih dahulu untuk menggunakan fitur ini</string>
+    <string name="attraction_error">Tidak bisa mendapatkan data wisata pada API</string>
+    <string name="souvenir_error">Tidak bisa mendapatkan data souvenir pada API</string>
+    <string name="itenenary_deleted">Rute telah dihapus</string>
+    <string name="itenenary_saved">Rute perjalanan disimpan !</string>
+    <string name="delete_itenenary_title">Hapus Rute</string>
+    <string name="delete_itenenary_message">Yakin ingin menghapus rute %s ?</string>
+    <string name="itenenary_error">Tidak bisa mendapatkan data rute!</string>
+    <string name="itenenary_save_error">Tidak bisa menyimpan data rute!</string>
+    <string name="itenenary_delete_error">Tidak bisa menghapus data rute</string>
+    <string name="itenenary_deleted_error">Rute gagal dihapus!</string>
+    <string name="itenenary_notSaved">Rute tidak tersimpan</string>
+    <string name="detail_click_instruction">Klik kartu untuk melihat detail informasi wisata</string>
+    <string name="day_time">Pagi - Sore</string>
+    <string name="night_time">Malam</string>
+    <string name="required_budget">Total estimasi budget yang dikeluarkan Rp%d</string>
+</resources>

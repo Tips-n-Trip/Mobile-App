@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:contentDescription=" "
+    tools:context=".ui.detail.attraction.AttractionDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_banner_detail_attraction"
+            android:layout_width="match_parent"
+            android:layout_height="295dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_detail"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/btn_back_detail_attraction"
+            style="@style/FloatingButtonStyle"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_back_button"
+            android:backgroundTint="@color/blue_app_darker1"
+            android:contentDescription="@string/button_back"
+            android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_attraction_name"
+            style="@style/TextSpec.Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/label_destination"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/iv_banner_detail_attraction" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="351dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="15dp"
+            android:text="@string/detail_destination_location"
+            app:drawableStartCompat="@drawable/ic_point_maps"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalRight"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_attraction_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attraction_name" />
+
+        <Button
+            android:id="@+id/btn_detail_attraction_getMaps"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/getMaps"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_text"
+            app:layout_constraintStart_toStartOf="@+id/tv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+        <TextView
+            android:id="@+id/tv_attraction_price"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="15dp"
+            android:gravity="center"
+            android:text="@string/starting_price"
+            app:drawableStartCompat="@drawable/ic_currency"
+            app:layout_constraintStart_toStartOf="@+id/tv_location"
+            app:layout_constraintTop_toBottomOf="@+id/btn_detail_attraction_getMaps" />
+
+        <TextView
+            android:id="@+id/tv_attraction_price_value"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/price"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_attraction_price"
+            app:layout_constraintStart_toEndOf="@+id/tv_attraction_price"
+            app:layout_constraintTop_toTopOf="@+id/tv_attraction_price" />
+
+        <TextView
+            android:id="@+id/detail_attraction_time_recommendation"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:drawablePadding="15dp"
+            android:gravity="center"
+            android:text="@string/time_recommendation"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attraction_price_value" />
+
+        <TextView
+            android:id="@+id/tv_time_recomendation_value"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/time_recommendation_value"
+            app:layout_constraintBottom_toBottomOf="@+id/detail_attraction_time_recommendation"
+            app:layout_constraintStart_toEndOf="@+id/detail_attraction_time_recommendation"
+            app:layout_constraintTop_toTopOf="@+id/detail_attraction_time_recommendation" />
+
+        <TextView
+            android:id="@+id/title_detail_attraction_description"
+            style="@style/TextSpec.Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/label_about_destination"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@id/detail_attraction_time_recommendation" />
+
+        <TextView
+            android:id="@+id/tv_attraction_about"
+            style="@style/TextSpec.TextDetail"
+            android:layout_width="351dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="left"
+            android:text="@string/detail_destination_description"
+            app:layout_constraintStart_toStartOf="@+id/title_detail_attraction_description"
+            app:layout_constraintTop_toBottomOf="@+id/title_detail_attraction_description" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/tv_bottom_destination_label"
+            style="@style/TextSpec.Field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/blue_app_darker1"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/label_city"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attraction_about" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

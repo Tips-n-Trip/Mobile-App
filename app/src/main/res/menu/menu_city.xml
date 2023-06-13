@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_city">
+        <item
+            android:id="@+id/city_1"
+            android:title="Malang" />
+        <item
+            android:id="@+id/city_2"
+            android:title="Bali" />
+        <!-- Add more number items as needed -->
+    </group>
+</menu>

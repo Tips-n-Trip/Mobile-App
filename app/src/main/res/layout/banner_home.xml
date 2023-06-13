@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/iv_banner_home"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/banner_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tv_banner_title"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:fontFamily="@font/semi_bold_poppins"
+        android:text="@string/banner_home_title"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_banner_home"
+        app:layout_constraintTop_toTopOf="@+id/iv_banner_home" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextSpec.Value"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:justificationMode="none"
+        android:text="@string/banner_home_desc"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_banner_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_banner_title" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
