@@ -27,7 +27,7 @@ class CreateIteneraryFragment : Fragment() {
     private val minimumBudget = 100000
     private var currentBudget = 0
     private var duration: Int = 1
-    private var destinationSelected: String = "Yogyakarta"
+    private var destinationSelected: String = ""
     private var listDestination = listOf<String>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -135,7 +135,7 @@ class CreateIteneraryFragment : Fragment() {
                         }
 
                         override fun onNothingSelected(parent: AdapterView<*>?) {
-                            destinationSelected = "Malang"
+                            destinationSelected = listDestination[0]
                             updateCreateButtonState(currentBudget)
                         }
                     }
