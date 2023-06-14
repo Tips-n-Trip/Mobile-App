@@ -67,7 +67,6 @@ class MyJourneyFragment : Fragment() {
                 }
             })
         }
-
     }
 
 }

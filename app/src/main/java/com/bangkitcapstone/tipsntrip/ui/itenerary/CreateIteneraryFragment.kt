@@ -9,8 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -50,7 +48,67 @@ class CreateIteneraryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.hide()
         updateCreateButtonState(currentBudget)
-        ///////////////////////// trying get data to spinner
+
+        setupViewModel()
+
+        val choices = resources.getStringArray(R.array.day_choices)
+        val adapter =
+            ArrayAdapter(requireActivity(), R.layout.day_spinner_item, choices)
+        adapter.setDropDownViewResource(R.layout.day_spinner_item)
+        binding.btnSpinnerDay.adapter = adapter
+        binding.btnSpinnerDay.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long,
+                ) {
+                    duration = choices[position].toInt()
+                    updateCreateButtonState(currentBudget)
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    duration = choices[0].toInt()
+                    updateCreateButtonState(currentBudget)
+                }
+            }
+        bindingLogin.btnLogin.setOnClickListener {
+            startActivity(Intent(requireActivity(), LoginActivity::class.java))
+        }
+        bindingLogin.btnSignup.setOnClickListener {
+            startActivity(Intent(requireActivity(), SignUpActivity::class.java))
+        }
+
+        val stringArray = resources.getStringArray(R.array.disclaimer_array_value)
+        val text = stringArray.joinToString("\n")
+        binding.tvDisclaimerValue.text = text
+
+        binding.etBudget.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s!!.length < 6) {
+                    binding.btnCreateItenenary.isEnabled = false
+                    binding.btnCreateItenenary.setBackgroundColor(resources.getColor(R.color.grey_button))
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s!!.length >= 1) {
+                    currentBudget = s.toString().toInt()
+                    if (currentBudget < minimumBudget * duration) {
+                        binding.etBudget.error =
+                            "Budget minimal ${duration * minimumBudget}"
+                    }
+                    updateCreateButtonState(currentBudget)
+                }
+            }
+        })
+
+    }
+
+    private fun setupViewModel() {
         iteneraryViewModel.apply {
             getDestinationChoices(requireActivity())
             isLoading.observe(viewLifecycleOwner, {
@@ -84,125 +142,25 @@ class CreateIteneraryFragment : Fragment() {
             })
             binding.btnCreateItenenary.setOnClickListener {
                 if (currentBudget >= minimumBudget * duration) {
-                    iteneraryViewModel.postItenerary(requireContext(), destinationSelected, duration, currentBudget)
+                    iteneraryViewModel.postItenerary(requireContext(),
+                        destinationSelected,
+                        duration,
+                        currentBudget)
                     itenerary.observe(requireActivity(), {
-                        if(it.success){
+                        if (it.success) {
                             val intent =
                                 Intent(requireActivity(), OutputIteneraryActivity::class.java)
-//                            intent.putExtra("DESTINATION", destinationSelected ?: "Yogyakarta")
-//                            intent.putExtra("DURATION", duration ?: 1)
-//                            intent.putExtra("BUDGET", currentBudget ?: 100000)
-                            intent.putExtra("DATA",it.itenerary)
+                            intent.putExtra("DATA", it.itenerary)
                             startActivity(intent)
+                            requireActivity().finish()
                         }
                     })
-
-//                Toast.makeText(requireActivity(), "$destinationSelected $duration $currentBudget", Toast.LENGTH_SHORT).show()
                 } else {
                     binding.etBudget.error = "Budget minimal ${duration * minimumBudget}"
                 }
             }
         }
-        ///////////////////////////
-        val choices = resources.getStringArray(R.array.day_choices)
-        val adapter =
-            ArrayAdapter(requireActivity(), R.layout.day_spinner_item, choices)
-        adapter.setDropDownViewResource(R.layout.day_spinner_item)
-        binding.btnSpinnerDay.adapter = adapter
-        binding.btnSpinnerDay.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long,
-                ) {
-                    duration = choices[position].toInt()
-                    updateCreateButtonState(currentBudget)
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    duration = choices[0].toInt()
-                    updateCreateButtonState(currentBudget)
-                }
-            }
-        /////////////////////////
-        bindingLogin.btnLogin.setOnClickListener {
-            startActivity(Intent(requireActivity(), LoginActivity::class.java))
-        }
-        bindingLogin.btnSignup.setOnClickListener {
-            startActivity(Intent(requireActivity(), SignUpActivity::class.java))
-        }
-
-        val stringArray = resources.getStringArray(R.array.disclaimer_array_value)
-        val text = stringArray.joinToString("\n")
-        binding.tvDisclaimerValue.text = text
-
-        binding.etBudget.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s!!.length < 6) {
-                    binding.btnCreateItenenary.isEnabled = false
-                    binding.btnCreateItenenary.setBackgroundColor(resources.getColor(R.color.grey_button))
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (s!!.length >= 1) {
-                    currentBudget = s.toString().toInt()
-                    if (currentBudget < minimumBudget * duration) {
-                        binding.etBudget.error =
-                            "Budget minimal ${duration * minimumBudget}"
-                    }
-                    updateCreateButtonState(currentBudget)
-                }
-            }
-        })
-//        binding.btnCreateItenenary.setOnClickListener {
-//            if (currentBudget >= minimumBudget * duration) {
-//                iteneraryViewModel.postItenerary(requireContext(), "Yogyakarta", 1, 100000)
-//                val intent =
-//                    Intent(requireActivity(), OutputIteneraryActivity::class.java)
-//                intent.putExtra("DESTINATION", destinationSelected ?: "Yogyakarta")
-//                intent.putExtra("DURATION", duration ?: 1)
-//                intent.putExtra("BUDGET", currentBudget ?: 100000)
-//                intent.putExtra("TAB", duration ?: "1")
-//                startActivity(intent)
-//                Toast.makeText(requireActivity(), "$destinationSelected $duration $currentBudget", Toast.LENGTH_SHORT).show()
-//            } else {
-//                binding.etBudget.error = "Budget minimal ${duration * minimumBudget}"
-//            }
-//        }
-
     }
-//        binding.btnCreateItenenary.setOnClickListener {
-//            if (currentBudget >= minimumBudget * duration) {
-//                iteneraryViewModel.apply {
-//                    postItenerary(requireActivity(), destinationSelected, duration, currentBudget)
-//                    itenerary.observe(viewLifecycleOwner, {
-//                        if (it.success == true) {
-//                            val intent =
-//                                Intent(requireActivity(), OutputIteneraryActivity::class.java)
-//                            intent.putExtra("ITENERARY DATA", it.itenerary)
-//                            intent.putExtra("TAB", duration ?: "1")
-//                            startActivity(intent)
-//                        } else {
-//                            Toast.makeText(requireActivity(),
-//                                "Gagal membuat rute",
-//                                Toast.LENGTH_SHORT)
-//                                .show()
-//                        }
-//                    })
-//                    isLoading.observe(viewLifecycleOwner, {
-//                        showLoading(it)
-//                    })
-//                }
-//            } else {
-//                binding.etBudget.error = "Budget minimal ${duration * minimumBudget}"
-//            }
-//        }
-//    }
 
     private fun updateCreateButtonState(budget: Int) {
         if (destinationSelected.isNullOrEmpty() || binding.etBudget.text.isEmpty()) {

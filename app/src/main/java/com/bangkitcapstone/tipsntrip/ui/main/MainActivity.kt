@@ -33,4 +33,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    override fun onBackPressed() {
+        overridePendingTransition(0, 0)
+        finish()
+    }
 }

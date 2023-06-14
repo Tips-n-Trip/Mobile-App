@@ -1,5 +1,6 @@
 package com.bangkitcapstone.tipsntrip.ui.itenerary
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -7,12 +8,14 @@ import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkitcapstone.tipsntrip.R
 import com.bangkitcapstone.tipsntrip.adapter.viewpager.DaySectionPagerAdapter
 import com.bangkitcapstone.tipsntrip.data.lib.itenerary.Agenda
 import com.bangkitcapstone.tipsntrip.data.lib.itenerary.Itenerary
 import com.bangkitcapstone.tipsntrip.databinding.ActivityOutputIteneraryBinding
+import com.bangkitcapstone.tipsntrip.ui.main.MainActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -69,7 +72,9 @@ class OutputIteneraryActivity : AppCompatActivity() {
             if (isBookmarked == false) {
                 iteneraryViewModel.deleteItenerarybyId(this@OutputIteneraryActivity, id)
             }
-            onBackPressedDispatcher.onBackPressed()
+            val intent = Intent(this@OutputIteneraryActivity, MainActivity::class.java)
+//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(intent)
             finish()
         }
         with(iteneraryData) {
@@ -98,8 +103,10 @@ class OutputIteneraryActivity : AppCompatActivity() {
         if (isBookmarked == false) {
             iteneraryViewModel.deleteItenerarybyId(this@OutputIteneraryActivity, id)
         }
+        val intent = Intent(this@OutputIteneraryActivity, MainActivity::class.java)
+//        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        startActivity(intent)
         finish()
-        super.onBackPressed()
     }
 
     private fun deleteItenerarySaved(name: String, id: String) {

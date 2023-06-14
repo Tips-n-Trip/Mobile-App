@@ -1,5 +1,6 @@
 package com.bangkitcapstone.tipsntrip.adapter.itenerary
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class ListMyJourneyAdapter(private val listData : ArrayList<Itenerary>):Recycler
                 val intent = Intent(holder.itemView.context, OutputIteneraryActivity::class.java)
                 intent.putExtra("DATA", data)
                 holder.itemView.context.startActivity(intent)
+                (holder.itemView.context as Activity).finish()
             }
         }
         bind(listData[position])
