@@ -33,7 +33,6 @@ class SmallSouvenirAdapter(private val listData: ArrayList<Souvenir>) :
                     holder.itemView.setOnClickListener {
                         val intent = Intent(it.context, SouvenirDetailActivity::class.java)
                         intent.putExtra("DATA SOUVENIR", data)
-                        intent.putExtra("IMAGE", data.imagePath)
                         it.context.startActivity(intent)
                     }
                 }

@@ -1,5 +1,6 @@
 package com.bangkitcapstone.tipsntrip.ui.explore.destination
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkitcapstone.tipsntrip.adapter.explore.FragmentCityAdapter
 import com.bangkitcapstone.tipsntrip.data.lib.city.Destination
@@ -32,7 +34,12 @@ class CityFragment : Fragment() {
     }
 
     private fun recyclerView() {
-        val layoutManager = LinearLayoutManager(activity)
+        val orientation = resources.configuration.orientation
+        val layoutManager = if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            LinearLayoutManager(activity)
+        } else {
+            GridLayoutManager(activity, 2)
+        }
         binding.rvCity.layoutManager = layoutManager
     }
 

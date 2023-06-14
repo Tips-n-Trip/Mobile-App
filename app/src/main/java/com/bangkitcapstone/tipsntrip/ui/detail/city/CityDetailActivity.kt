@@ -1,7 +1,6 @@
 package com.bangkitcapstone.tipsntrip.ui.detail.city
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,7 +8,6 @@ import com.bangkitcapstone.tipsntrip.R
 import com.bangkitcapstone.tipsntrip.adapter.home.SmallAttractionAdapter
 import com.bangkitcapstone.tipsntrip.adapter.home.SmallSouvenirAdapter
 import com.bangkitcapstone.tipsntrip.data.lib.city.Destination
-import com.bangkitcapstone.tipsntrip.data.lib.souvenir.Souvenir
 import com.bangkitcapstone.tipsntrip.databinding.ActivityCityDetailBinding
 import com.bumptech.glide.Glide
 

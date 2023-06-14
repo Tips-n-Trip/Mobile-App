@@ -88,7 +88,7 @@
     <string name="disclaimer_title">Perhatian!</string>
     <string name="disclaimer_value">Budget yang dimasukkan minimal per-hari adalah Rp100.000</string>
     <string-array name="disclaimer_array_value">
-        <item>⦾ Biaya dapat berubah sewaktu-waktu dan hanya mencakup tiket masuk tempat wisata</item>
+        <item>⦾ Biaya dapat berubah sewaktu-waktu dan hanya mencakup tiket masuk tempat wisata untuk satu orang</item>
         <item>⦾ Budget yang dimasukkan minimal per-hari adalah Rp100.000</item>
     </string-array>
     <string name="create_itenenary">Buat Rencana</string>
@@ -100,7 +100,7 @@
     <string name="point_barrier"> . </string>
     <string name="total_day">%d hari</string>
     <string name="email_value">%s@email.com</string>
-    <string name="cooming_soon">Fitur akan segera hadir</string>
+    <string name="coming_soon">Fitur akan segera hadir</string>
     <string name="day_index">Hari ke</string>
     <string name="day_one">1</string>
     <string name="day_two">2</string>

@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
             btnGoogleLogin.setOnClickListener {
                 Toast.makeText(
                     this@LoginActivity,
-                    resources.getString(R.string.cooming_soon),
+                    resources.getString(R.string.coming_soon),
                     Toast.LENGTH_SHORT
                 )
                     .show()

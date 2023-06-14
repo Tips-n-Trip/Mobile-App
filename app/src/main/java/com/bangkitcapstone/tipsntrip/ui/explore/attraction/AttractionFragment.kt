@@ -1,11 +1,13 @@
 package com.bangkitcapstone.tipsntrip.ui.explore.attraction
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkitcapstone.tipsntrip.adapter.explore.FragmentAttractionAdapter
 import com.bangkitcapstone.tipsntrip.adapter.loading.LoadingStateAdapter
@@ -34,7 +36,12 @@ class AttractionFragment : Fragment() {
     }
 
     private fun recyclerView() {
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        val orientation = resources.configuration.orientation
+        val layoutManager = if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        } else {
+            GridLayoutManager(activity, 2)
+        }
         binding.rvAttraction.layoutManager = layoutManager
     }
 

@@ -18,6 +18,7 @@
         <activity
             android:name=".ui.itenerary.OutputIteneraryActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.TipsNTrip.NoActionBarAndStatusBar">
             <meta-data
                 android:name="android.app.lib_name"

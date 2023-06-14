@@ -35,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
             btnGoogleSignup.setOnClickListener {
                 Toast.makeText(
                     this@SignUpActivity,
-                    resources.getString(R.string.cooming_soon),
+                    resources.getString(R.string.coming_soon),
                     Toast.LENGTH_SHORT
                 )
                     .show()

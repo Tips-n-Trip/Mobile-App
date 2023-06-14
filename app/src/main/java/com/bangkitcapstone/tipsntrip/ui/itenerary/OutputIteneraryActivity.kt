@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkitcapstone.tipsntrip.R
 import com.bangkitcapstone.tipsntrip.adapter.viewpager.DaySectionPagerAdapter
@@ -42,6 +41,9 @@ class OutputIteneraryActivity : AppCompatActivity() {
             if (isBookmarked == false) {
                 iteneraryViewModel.apply {
                     saveItenerarybyId(this@OutputIteneraryActivity, iteneraryData.id)
+                    isLoading.observe(this@OutputIteneraryActivity, {
+                        showLoading(it)
+                    })
                     saveItenerary.observe(this@OutputIteneraryActivity, {
                         if (it.success == true) {
                             Toast.makeText(this@OutputIteneraryActivity,
@@ -96,8 +98,8 @@ class OutputIteneraryActivity : AppCompatActivity() {
         if (isBookmarked == false) {
             iteneraryViewModel.deleteItenerarybyId(this@OutputIteneraryActivity, id)
         }
-        super.onBackPressed()
         finish()
+        super.onBackPressed()
     }
 
     private fun deleteItenerarySaved(name: String, id: String) {

@@ -1,6 +1,5 @@
 package com.bangkitcapstone.tipsntrip.ui.detail.souvenir
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,21 +9,18 @@ import com.bangkitcapstone.tipsntrip.databinding.ActivitySouvenirDetailBinding
 import com.bangkitcapstone.tipsntrip.utils.Helper
 import com.bumptech.glide.Glide
 
-@Suppress("DEPRECATION")
 class SouvenirDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySouvenirDetailBinding
 
-    @SuppressLint("QueryPermissionsNeeded")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySouvenirDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val dataSouvenir = intent.getParcelableExtra<Souvenir>("DATA SOUVENIR") as Souvenir
-        val imagePath = intent.getStringExtra("IMAGE")
-        Glide.with(this)
-            .load(imagePath)
-            .into(binding.ivBannerDetailSouvenir)
         binding.apply {
+            Glide.with(this@SouvenirDetailActivity)
+                .load(dataSouvenir.imagePath)
+                .into(ivBannerDetailSouvenir)
             tvSouvenirName.text = dataSouvenir.name
             tvSouvenirAddress.text = Helper.parseAddress(this@SouvenirDetailActivity, dataSouvenir.latitude, dataSouvenir.longitude)
             tvSouvenirDescription.text = dataSouvenir.about

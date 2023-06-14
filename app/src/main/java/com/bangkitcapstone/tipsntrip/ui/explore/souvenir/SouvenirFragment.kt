@@ -1,5 +1,6 @@
 package com.bangkitcapstone.tipsntrip.ui.explore.souvenir
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkitcapstone.tipsntrip.adapter.explore.FragmentSouvenirAdapter
 import com.bangkitcapstone.tipsntrip.adapter.loading.LoadingStateAdapter
@@ -35,7 +37,12 @@ class SouvenirFragment : Fragment() {
     }
 
     private fun recyclerView() {
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        val orientation = resources.configuration.orientation
+        val layoutManager = if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        } else {
+            GridLayoutManager(activity, 2)
+        }
         binding.rvSouvenir.layoutManager = layoutManager
     }
 

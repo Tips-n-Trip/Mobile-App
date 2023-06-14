@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/nights_stay/baseline_nights_stay_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/bookmark_added/baseline_bookmark_added_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_nights_stay_24" />
+                            <entry key="outputName" value="ic_baseline_bookmark_added_24" />
                             <entry key="sourceFile" value="C:\Users\rezaa\Downloads\Tips n Trip_07_06_2023\Tips n Trip\app" />
                           </map>
                         </option>

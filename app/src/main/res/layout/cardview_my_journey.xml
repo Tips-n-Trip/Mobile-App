@@ -8,15 +8,24 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="10dp"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardUseCompatPadding="true">
+    card_view:cardCornerRadius="10dp"
+    card_view:cardUseCompatPadding="true"
+    android:outlineSpotShadowColor="@color/blue_app_darker2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:background="?android:selectableItemBackground"
-
         >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_baseline_bookmark_added_24"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/iv_banner" />
 
         <ImageView
             android:id="@+id/iv_banner"

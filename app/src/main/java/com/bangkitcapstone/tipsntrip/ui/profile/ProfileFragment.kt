@@ -7,10 +7,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment
 import com.bangkitcapstone.tipsntrip.R
 import com.bangkitcapstone.tipsntrip.databinding.FragmentLoginRequestBinding
 import com.bangkitcapstone.tipsntrip.databinding.FragmentProfileBinding
@@ -53,8 +55,17 @@ class ProfileFragment : Fragment() {
         binding.btnLogoutProfile.setOnClickListener {
             showLogoutConfirmationDialog()
         }
+        binding.btnSettingProfile.setOnClickListener {
+            Toast.makeText(requireActivity(), resources.getString(R.string.coming_soon), Toast.LENGTH_SHORT).show()
+        }
+        binding.btnMyexploreProfile.setOnClickListener {
+            val navController = NavHostFragment.findNavController(this)
+            navController.navigate(R.id.navigation_myjourney)
+            val navGraph = navController.navInflater.inflate(R.navigation.main_navigation)
+            navGraph.setStartDestination(R.id.navigation_myjourney)
+            navController.graph = navGraph
+        }
         setupViewModel()
-
     }
 
     private fun setupViewModel() {
