@@ -49,15 +49,16 @@
         <TextView
             android:id="@+id/tv_location"
             style="@style/TextSpec.TextDetail"
-            android:layout_width="351dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:drawablePadding="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
             android:text="@string/detail_destination_location"
             app:drawableStartCompat="@drawable/ic_point_maps"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalRight"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_attraction_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_attraction_name" />
 
         <Button
@@ -135,12 +136,14 @@
         <TextView
             android:id="@+id/tv_attraction_about"
             style="@style/TextSpec.TextDetail"
-            android:layout_width="351dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
             android:gravity="left"
             android:text="@string/detail_destination_description"
-            app:layout_constraintStart_toStartOf="@+id/title_detail_attraction_description"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_detail_attraction_description" />
 
         <androidx.constraintlayout.widget.Guideline
