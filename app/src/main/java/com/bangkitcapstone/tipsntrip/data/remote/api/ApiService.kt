@@ -3,7 +3,10 @@ package com.bangkitcapstone.tipsntrip.data.remote.api
 import com.bangkitcapstone.tipsntrip.data.lib.attraction.AttractionResponse
 import com.bangkitcapstone.tipsntrip.data.lib.city.DestinationResponse
 import com.bangkitcapstone.tipsntrip.data.lib.city.DetailDestinationResponse
-import com.bangkitcapstone.tipsntrip.data.lib.itenerary.*
+import com.bangkitcapstone.tipsntrip.data.lib.itenerary.DeleteIteneraryResponse
+import com.bangkitcapstone.tipsntrip.data.lib.itenerary.IteneraryListResponse
+import com.bangkitcapstone.tipsntrip.data.lib.itenerary.IteneraryResponse
+import com.bangkitcapstone.tipsntrip.data.lib.itenerary.SaveIteneraryResponse
 import com.bangkitcapstone.tipsntrip.data.lib.souvenir.SouvenirResponse
 import com.bangkitcapstone.tipsntrip.data.lib.user.LoginResponse
 import com.bangkitcapstone.tipsntrip.data.lib.user.SignUpResponse
@@ -55,11 +58,11 @@ interface ApiService {
         @Query("size") size: Int,
     ): AttractionResponse
 
-    @GET("souvenir") //sudah include pagination
+    @GET("souvenir")
     fun getAllSouvenir(
     ): Call<SouvenirResponse>
 
-    @GET("souvenir") //sudah include pagination
+    @GET("souvenir")
     suspend fun getAllSouvenirPagination(
         @Query("page") page: Int,
         @Query("size") size: Int,

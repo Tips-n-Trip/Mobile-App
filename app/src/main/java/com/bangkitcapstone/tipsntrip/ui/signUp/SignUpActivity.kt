@@ -134,23 +134,6 @@ class SignUpActivity : AppCompatActivity() {
                         state)
                 }
             })
-//            isLogin.observe(this@SignUpActivity) { state ->
-//                if (state == true) {
-//                    showDialog(
-//                        resources.getString(R.string.signup_success_title),
-//                        resources.getString(R.string.signup_success_message),
-//                        resources.getString(R.string.next),
-//                        state
-//                    )
-//                } else {
-//                    showDialog(
-//                        resources.getString(R.string.signup_failed_title),
-//                        resources.getString(R.string.signup_failed_message),
-//                        resources.getString(R.string.retry),
-//                        state
-//                    )
-//                }
-//            }
         }
     }
 

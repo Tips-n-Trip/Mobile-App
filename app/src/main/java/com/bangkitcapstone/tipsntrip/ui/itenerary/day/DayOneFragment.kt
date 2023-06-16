@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkitcapstone.tipsntrip.R
 import com.bangkitcapstone.tipsntrip.adapter.itenerary.AgendaAdapter
-import com.bangkitcapstone.tipsntrip.data.lib.attraction.Attraction
 import com.bangkitcapstone.tipsntrip.data.lib.itenerary.Agenda
 import com.bangkitcapstone.tipsntrip.data.lib.itenerary.AttractionsItenerary
 import com.bangkitcapstone.tipsntrip.databinding.FragmentDayOneBinding

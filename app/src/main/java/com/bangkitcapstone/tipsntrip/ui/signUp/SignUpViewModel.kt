@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bangkitcapstone.tipsntrip.data.lib.user.LoginResponse
 import com.bangkitcapstone.tipsntrip.data.lib.user.SignUpResponse
 import com.bangkitcapstone.tipsntrip.data.remote.api.ApiConfig
 import retrofit2.Call
@@ -33,7 +32,7 @@ class SignUpViewModel : ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     _isLogin.postValue(true)
-                    _user.postValue(response.body()) //you add here
+                    _user.postValue(response.body())
                 } else {
                     _error.postValue("ERROR ${response.code()} : ${response.message()}")
                     _isLogin.postValue(false)

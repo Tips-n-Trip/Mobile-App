@@ -10,13 +10,6 @@ import com.bangkitcapstone.tipsntrip.ui.explore.ViewPagerDataListener
 
 class SectionsPagerAdapter(activity: AppCompatActivity, private var viewPagerDataListener: ViewPagerDataListener,)
     : FragmentStateAdapter(activity) {
-//    override fun createFragment(position: Int): Fragment {
-//        return when (position) {
-//            0 -> CityFragment()
-//            1 -> AttractionFragment()
-//            else -> SouvenirFragment()
-//        }
-//    }
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> CityFragment().apply { setViewPagerDataListener(viewPagerDataListener) }

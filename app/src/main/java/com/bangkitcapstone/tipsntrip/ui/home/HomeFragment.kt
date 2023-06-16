@@ -13,7 +13,6 @@ import com.bangkitcapstone.tipsntrip.R
 import com.bangkitcapstone.tipsntrip.adapter.home.SmallAttractionAdapter
 import com.bangkitcapstone.tipsntrip.adapter.home.SmallCityAdapter
 import com.bangkitcapstone.tipsntrip.adapter.home.SmallSouvenirAdapter
-import com.bangkitcapstone.tipsntrip.data.lib.city.Destination
 import com.bangkitcapstone.tipsntrip.databinding.FragmentHomeBinding
 
 

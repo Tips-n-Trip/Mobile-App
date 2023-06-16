@@ -130,8 +130,6 @@ class CreateIteneraryFragment : Fragment() {
                         ) {
                             destinationSelected = listDestination[position]
                             updateCreateButtonState(currentBudget)
-                            // Do something with the selected destination
-                            // For example, you can store it in a variable or pass it to a function
                         }
 
                         override fun onNothingSelected(parent: AdapterView<*>?) {

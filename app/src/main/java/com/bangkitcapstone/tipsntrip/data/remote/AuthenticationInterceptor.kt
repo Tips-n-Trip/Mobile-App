@@ -13,7 +13,6 @@ class AuthenticationInterceptor(context: Context) : Interceptor {
         userPreference.getToken()?.let { token->
             request
                 .addHeader("Authorization", "Bearer $token")
-//                .addHeader("Content-Type", "multiple/form-data")
         }
         return chain.proceed(request.build())
     }

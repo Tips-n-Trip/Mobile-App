@@ -121,9 +121,6 @@ class OutputIteneraryActivity : AppCompatActivity() {
                 unsaveItenerarybyId(this@OutputIteneraryActivity, id)
                 unsaveItenerary.observe(this@OutputIteneraryActivity, {
                     if (it.success == true) {
-//                        Toast.makeText(this@OutputIteneraryActivity,
-//                            resources.getString(R.string.itenenary_deleted),
-//                            Toast.LENGTH_SHORT).show()
                         binding.ivBookmark.setImageDrawable(resources.getDrawable(R.drawable.ic_bookmark_white))
                         isBookmarked = !isBookmarked
                     } else {
